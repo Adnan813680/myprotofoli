@@ -1,71 +1,125 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Adnan Jashari | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <nav>
-      <h1>Adnan Jashari</h1>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#hobbies">Hobbies</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1 class="logo">MyPortfolio</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Hobbies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <img src="image/adnan.jpg" alt="Adnan Jashari" class="profile-pic"/>
-    <h2>Student of Computer Science</h2>
-    <p>I enjoy solving problems,  running, gaming, and watching great films.</p>
-  </section>
+  <div class="container">
+    <div class="header">
+      <div class="logo">△</div>
+      <div class="email">adnan.jashari@umib.net</div>
+    </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm Adnan Jashari, a dedicated Computer Science student who thrives on problem-solving, curiosity, and creativity. I'm always looking for ways to improve my skills and push myself to learn something new — whether it’s through coding, gaming, or just exploring how things work.
-    </p>
-    <p>
-      Outside of school, I’m all about balance — I love staying active by running, and when I’m chilling, you’ll usually find me watching movies or deep into a CS2 match. I enjoy working on projects that challenge me, especially those that involve logic, design, or teamwork.
-    </p>
-    <p>
-      My goal is to become a well-rounded developer who can build both the front-end and back-end of real-world applications. I'm not afraid of hard work — I believe in showing up, learning fast, and leveling up every single day.
-    </p>
-  </section>
-  
-  <section id="hobbies">
-    <h2>My Hobbies</h2>
-    <div class="hobby-list">
-      <div class="hobby-card">
-        <img src="image/running.jpg" alt="Running">
-        <h3>Running</h3>
-        <p>Running helps me stay active and clear my mind. I try to go for a run a few times a week — it's my way to reset.</p>
+    <div class="intro">
+      <img src="adnan.jpg" alt="Adnan Jashari">
+      <h1>Hi, I’m <span class="highlight">Adnan Jashari!</span></h1>
+      <h2>I’m a <span class="highlight">Frontend Developer</span></h2>
+      <div class="badge">Open to work</div>
+      <a href="#" class="cta">Book a call</a>
+      <p>Feel free to explore my portfolio and reach out — I’d love to connect!</p>
+    </div>
+
+    <div class="grid info-grid">
+      <div class="card info-card">
+        <img src="about.png" alt="About Me Icon" class="icon">
+        <h3>About Me</h3>
+        <p>I'm always looking for ways to improve my skills and push myself to learn something new — whether it’s through coding, gaming, or just exploring how things work.</p>
       </div>
-      <div class="hobby-card">
-        <img src="image/movies.webp" alt="Watching Movies">
-        <h3>Watching Movies</h3>
-        <p>I love watching thrillers, sci-fi, and action movies. It's how I relax and get inspired by creative storytelling.</p>
+      <div class="card info-card">
+        <img src="experience.jpg" alt="Experience Icon" class="icon">
+        <h3>Experience</h3>
+        <p>👨‍💻 Student at <strong>Computer Science</strong><br>💻 Projects at <strong>Github</strong></p>
       </div>
-      <div class="hobby-card">
-        <img src="image/cs2.jpg" alt="Playing CS2">
-        <h3>Playing CS2</h3>
-        <p>Counter-Strike 2 is my go-to game. It sharpens my reflexes, teamwork, and strategic thinking.</p>
+      <div class="card info-card">
+        <img src="book.jpg" alt="Reading Icon" class="icon">
+        <h3>Current Read</h3>
+        <p><strong>Clean Code</strong> by Robert C. Martin.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="container">
+      <h2>What I Can Do for You</h2>
+      <div class="grid services-grid">
+        <div class="card service-card">
+          <img src="webd.jpg" alt="Web Design">
+          <h3>Web Design</h3>
+          <p>Visually appealing, user-centric designs for your brand.</p>
+        </div>
+        <div class="card service-card">
+          <img src="webb.jpg" alt="Web Development">
+          <h3>Web Development</h3>
+          <p>Modern and responsive frontends using HTML, CSS, JavaScript.</p>
+        </div>
+        <div class="card service-card">
+          <img src="rd.webp" alt="Responsive Layouts">
+          <h3>Responsive Layouts</h3>
+          <p>Mobile-first designs that look great on any screen size.</p>
+        </div>
       </div>
     </div>
   </section>
-  
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email me at: <strong>adnan.jashari593@gamil.com</strong></p>
+  <section id="portfolio">
+    <div class="container">
+      <h2>Projects & Hobbies</h2>
+      <div class="grid">
+        <div class="card item">
+          <img src="run.jpg" alt="Running">
+          <p>🏃‍♂️ Running — for mental clarity and fitness.</p>
+        </div>
+        <div class="card item">
+          <img src="cs2.jpg" alt="Playing CS2">
+          <p>🎮 Playing CS2 — strategic team play fun.</p>
+        </div>
+        <div class="card item">
+          <img src="movie.webp" alt="Watching Movies">
+          <p>🎬 Watching Movies — love for film and stories.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</div>
+
   <footer>
-    <p>&copy; 2025 Adnan Jashari. All rights reserved.</p>
+    <p>© 2025 Adnan Jashari. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
