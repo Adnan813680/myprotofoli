@@ -50,35 +50,42 @@ header .container {
 
 nav ul {
   flex-direction: column;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  width: 200px;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 30%; 
+  background: #ffffff;
+  padding: 2rem;
   display: none;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-  padding: 1rem;
-  z-index: 1001;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  transform: translateX(100%); 
 }
 
 nav ul.active {
   display: flex;
+  transform: translateX(0); 
+}
+nav ul li {
+  margin-bottom: 20px;
+  list-style-type: none;
 }
 
 nav ul li a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e51818;
   text-decoration: none;
-  color: #ed1717;
-  font-weight: 500;
   transition: color 0.3s;
 }
 
-nav ul li {
-  margin-bottom: 10px;
+nav ul li a:hover {
+  color: #ff6600;
 }
 
-nav ul li a:hover {
-  color: #333;
-}
 
 .menu-icon {
   margin-left: auto;
@@ -87,6 +94,7 @@ nav ul li a:hover {
   color: #e51818;
   z-index: 1002;
   position: relative;
+  
 }
 
 .cta {
