@@ -283,6 +283,8 @@ iframe:hover {
   color: #ff3b3b;
 }
 
+
+
 .reading-card {
   background: #eceded;
   border: 2px solid #fff;
@@ -496,4 +498,3 @@ button.btn:hover {
   cursor: pointer;
   z-index: 2000;
 }
-
