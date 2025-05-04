@@ -191,7 +191,7 @@ nav ul li a:hover {
 .card, .info-card {
   background: #eceded;
   padding: 1.5rem;
-  border-radius: 20%;
+  border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s, box-shadow 0.3s;
   text-align: left;
