@@ -62,7 +62,7 @@ header .container {
   height: auto;
 }
 
-.dot{
+.dot-t{
   font-size: 30px;
   width: 10px;
   color: #ff6600;
@@ -97,13 +97,32 @@ nav ul li {
 nav ul li a {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #e51818;
+  color: #000;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 nav ul li a:hover {
   color: var(--accent);
+}
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    display: none;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
 
 .intro {
@@ -192,6 +211,60 @@ nav ul li a:hover {
     width: 100%;
   }
 }
+.experience-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.section-heading {
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  background: #fff;
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+.experience-list {
+  position: relative;
+  padding-left: 20px;
+}
+.experience-list::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 6px; 
+  width: 2px;
+  height: calc(100% - 7px); 
+  background-color: #080605;
+  z-index: 0;
+}
+.experience-item {
+  position: relative;
+  padding-left: 0px;
+}
+.dot {
+  margin-top: 12px;
+  position: absolute;
+  left: -20px;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background-color: #080605;
+  border-radius: 50%;
+  z-index: 1;
+}
+.experience-content h5 {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0;
+}
+.experience-content p {
+  font-size: 13px;
+  color: #555;
+  margin-top: 4px;
+}
 
 .grid {
   display: grid;
@@ -214,7 +287,7 @@ nav ul li a:hover {
   border-radius: 16px;
 }
 
-h3{
+.grid h3{
   display: inline-block;
   background: #fff;
   padding: 0.3rem 0.7rem;
@@ -253,6 +326,7 @@ iframe:hover {
   border-radius: 24px;
   backdrop-filter: blur(20px);
   padding: 2rem;
+  padding-top: -10px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   text-align: left;
   transition: all 0.4s ease;
