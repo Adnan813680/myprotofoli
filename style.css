@@ -39,7 +39,6 @@ header .container {
   position: relative;
 }
 
-
 .email {
   text-decoration: underline;
 }
@@ -55,11 +54,13 @@ header .container {
   z-index: 1002;
   position: relative;
 }
+
 .logo {
   font-size: 40px; 
   width: auto;
   height: auto;
 }
+
 .dot{
   font-size: 30px;
   width: 10px;
@@ -185,13 +186,11 @@ nav ul li a:hover {
   background-color: #0056b3;
 }
 
-/* Responsive tweak */
 @media (max-width: 600px) {
   .call-form {
     width: 100%;
   }
 }
-
 
 .grid {
   display: grid;
@@ -223,8 +222,9 @@ h3{
   margin: 1rem 0;
 }
 .service-card iframe {
-  min-height: 300px; /* Set a minimum height */
+  min-height: 300px; 
 }
+
 iframe {
   width: 100%;
   height: 100%;
@@ -235,20 +235,16 @@ iframe {
   object-fit: cover;
 }
 
-/* When hovering, the map gently zooms and glows */
 iframe:hover {
   transform: scale(1.03);
   box-shadow: 0 0 20px var(--accent), 0 0 30px rgba(255, 102, 0, 0.5);
   border: 2px solid var(--accent);
 }
 
-/* Optional: improve container control */
 .service-card {
   overflow: hidden;
-  min-height: 350px; /* Adjust height for better aspect ratio */
+  min-height: 350px;
 }
-
-
 
 .playlist-card {
   background: #eceded;
@@ -294,8 +290,6 @@ iframe:hover {
 .playlist-card a:hover {
   color: #ff3b3b;
 }
-
-
 
 .reading-card {
   background: #eceded;
@@ -403,7 +397,7 @@ iframe:hover {
 
 #step-text {
   transition: opacity 0.3s;
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.5rem; 
   line-height: 1.6;
 }
 
