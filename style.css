@@ -57,6 +57,7 @@ header .container {
   right: 20px;
 }
 
+/* Common span styles */
 .menu-icon span {
   display: block;
   height: 3px;
@@ -66,7 +67,7 @@ header .container {
   transition: 0.4s;
 }
 
-
+/* Specific span widths */
 .menu-icon span:nth-child(1) {
   width: 17px;
   margin-left: auto;
@@ -215,7 +216,7 @@ nav ul li a:hover {
 .callout {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 16px; /* spacing between button and text */
   flex-wrap: wrap;
   font-family: 'Poppins', sans-serif;
 }
