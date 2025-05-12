@@ -98,18 +98,6 @@ header .container {
   margin-right: 0;
 }
 
-.logo {
-  margin-left: -30px;
-  font-size: 40px; 
-  width: auto;
-  height: auto;
-}
-
-.dot-t{
-  font-size: 30px;
-  width: 10px;
-  color: #ff6600;
-}
 
 nav ul {
   display: flex;
@@ -152,9 +140,7 @@ nav ul li a:hover {
   nav ul {
     flex-direction: column;
     position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: #333;
+    background-color: #fff;
     width: 100%;
     display: none;
   }
@@ -275,12 +261,50 @@ nav ul li a:hover {
 .call-form button:hover {
   background-color: #0056b3;
 }
+.logo img {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 24px;
+}
+
+
+/* ========== FORM ========== */
+.call-form {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.call-form input,
+.call-form button {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.call-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.call-form button:hover {
+  background-color: #0056b3;
+}
 
 @media (max-width: 600px) {
   .call-form {
     width: 100%;
   }
 }
+
+/* ========== EXPERIENCE SECTION ========== */
 .experience-section {
   max-width: 800px;
   margin: 0 auto;
@@ -295,6 +319,17 @@ nav ul li a:hover {
   border-radius: 30px;
   text-decoration: none;
   margin-top: 1rem;
+  margin-bottom: 25px;
+}
+h3{
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  background: #fff;
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  margin-bottom: 25px;
 }
 .experience-list {
   position: relative;
@@ -336,39 +371,105 @@ nav ul li a:hover {
   margin-top: 4px;
 }
 
+/* ========== CARDS & GRID ========== */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
-.card, .info-card {
-  background: #eceded;
-  padding: 1.5rem;
-  border-radius: 24px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
+.card,
+.playlist-card,
+.reading-card,
+.experience-card {
+  
+  color: #000;
   text-align: left;
-  border: 3px solid #fff;
-}
-.service-card{
-  border: 3px solid #fff;
-  border-radius: 16px;
+  border-radius: 15px;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+  padding: 2em;
+  width: 400px;
+  height: 350px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-.grid h3{
-  display: inline-block;
-  background: #fff;
-  padding: 0.3rem 0.7rem;
+.intro img::before,
+.card::before,
+.playlist-card::before,
+.reading-card::before,
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #00f, transparent 70%);
+  animation: rotate 4s linear infinite;
+  z-index: -1;
+}
+.card::after,
+.playlist-card::after,
+.reading-card::after,
+.experience-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f3f3f3;
+  border-radius: 10px;
+  margin: 3px;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card:hover,
+.playlist-card:hover,
+.reading-card:hover,
+.experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.playlist-card img{
   border-radius: 20px;
-  font-size: 0.9rem;
-  margin: 1rem 0;
+  object-fit: cover;
+  width: 90%;
 }
-.service-card iframe {
-  min-height: 300px; 
+.reading-card img{
+  border-radius: 20px;
+  object-fit: cover;
+  width: 38%;
+  margin-left: 170px;
+  margin-top: -30px;
 }
 
+
+.playlist-card a,
+.reading-card a,
+.experience-card a {
+  display: inline-block;
+  color: #000;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.playlist-card a:hover,
+.reading-card a:hover,
+.experience-card a:hover {
+  background-color: var(--card-hover);
+}
 iframe {
   width: 100%;
   height: 100%;
@@ -377,126 +478,6 @@ iframe {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
   object-fit: cover;
-}
-
-iframe:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 20px var(--accent), 0 0 30px rgba(255, 102, 0, 0.5);
-  border: 2px solid var(--accent);
-}
-
-.service-card {
-  overflow: hidden;
-  min-height: 350px;
-}
-
-.playlist-card {
-  background: #eceded;
-  border: 2px solid #fff;
-  border-radius: 24px;
-  backdrop-filter: blur(20px);
-  padding: 2rem;
-  padding-top: -10px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  text-align: left;
-  transition: all 0.4s ease;
-  width: 390px;
-}
-
-.playlist-card:hover {
-  transform: translateY(-8px); 
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-.playlist-card img {
-  border-radius: 20px;
-  object-fit: cover;
-  width: 100%;
-  height: 200px;
-  margin-bottom: 1.5rem;
-}
-
-.playlist-card h3 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-}
-
-.playlist-card a {
-  display: inline-block;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #ff6b6b;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.playlist-card a:hover {
-  color: #ff3b3b;
-}
-
-.reading-card {
-  background: #eceded;
-  border: 2px solid #fff;
-  border-radius: 24px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 2rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  width: 400px;
-  transition: all 0.4s ease;
-}
-
-.reading-card:hover {
-  transform: translateY(-8px);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-.reading-card h3 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  text-align: left;
-}
-
-.reading-content {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.reading-content img {
-  width: 120px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 16px;
-  border: 3px solid #fff;
-  margin-left: 150px;
-}
-
-.book-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.book-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.book-info a {
-  font-size: 0.95rem;
-  color: #ff6b6b;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.book-info a:hover {
-  color: #ff3b3b;
 }
 
 .how-i-work {
@@ -508,7 +489,6 @@ iframe:hover {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   text-align: center;
   max-width: 700px;
-  margin-left: -100px;
   margin-right: auto;
 }
 
@@ -650,4 +630,131 @@ button.btn:hover {
   border-radius: 30px;
   cursor: pointer;
   z-index: 2000;
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.dark-toggle {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: background-color 0.3s;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+body.dark-mode .dark-toggle {
+  background-color: #333;
+}
+/* ========== MOBILE FIXES ========== */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-icon {
+    font-size: 1.5rem;
+    padding: 8px 16px;
+    top: 10px;
+    right: 10px;
+  }
+
+  nav ul {
+    width: 100%;
+    padding: 1.5rem;
+    box-shadow: none;
+  }
+
+  .intro h1, .intro h2 {
+    font-size: 2.5rem;
+  }
+
+  .intro img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card, .playlist-card, .reading-card, .experience-card, .service-card {
+    width: 90%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .how-i-work {
+    padding: 2rem;
+    text-align: left;
+  }
+
+  .how-i-work h2 {
+    font-size: 1.5rem;
+  }
+
+  .step-content p {
+    font-size: 1rem;
+  }
+
+  form {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .dark-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .reading-card img {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .call-form {
+    padding: 0 1rem;
+  }
+
+  .experience-section {
+    padding: 0 1rem;
+  }
+
+  section {
+    padding: 40px 10px;
+  }
+
+  .developer-badge {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .badge {
+    margin: 0;
+    margin-top: -60px;
+    margin-bottom: 30px;
+    margin-left: 220px;
+  }
+  
 }

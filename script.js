@@ -1,10 +1,24 @@
+window.onload = function () {
+  const darkModeEnabled = localStorage.getItem('dark-mode') === 'enabled';
+  if (darkModeEnabled) {
+    document.body.classList.add('dark-mode');
+    document.getElementById('icon').textContent = '🌞';
+  }
+};
+
 function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
+  const body = document.body;
+  const icon = document.getElementById('icon');
+
+  body.classList.toggle('dark-mode');
+  const isDark = body.classList.contains('dark-mode');
+
+  icon.textContent = isDark ? '🌞' : '🌙';
+  localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
 }
 function toggleMenu() {
   const nav = document.querySelector('nav ul');
   const menuIcon = document.getElementById('menu-toggle');
-
   nav.classList.toggle('active');
   menuIcon.classList.toggle('open'); // Toggle X effect
 }
