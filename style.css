@@ -28,9 +28,13 @@ body {
 
 header {
   padding: 1rem 0rem;
-  position: relative;
+  position: sticky;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  width: 100%;
   top: 0;
   margin-bottom: 20px;
+  z-index: 999;
 }
 
 header .container {
