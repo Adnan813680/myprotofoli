@@ -6,17 +6,26 @@
   <title>Portfolio Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  
+
+  
 </head>
 <body>
 
   <header>
     <div class="container">
-      <div class="logo"><img src="image/logo.png" alt=""></div>
-      <div class="menu-icon" id="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="logo"><img src="image/logo.png" alt="Logo"></div>
+      
+  
+      <div class="menu-wrapper">
+        <div class="menu-icon" id="menu-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="close-icon" id="menu-close" onclick="toggleMenu()">✖</div>
       </div>
+  
       <nav id="nav">
         <ul>
           <li><a href="#home">Home</a></li>
@@ -29,6 +38,7 @@
     </div>
   </header>
   
+  
 
     <div class="intro">
       <h1>Hi, I’m <img src="image/adnan.jpg" alt="Adnan Jashari"> Adnan Jashari!</h1>
@@ -39,21 +49,76 @@
       </div>
     
       <div class="callout">
-        <a href="#" class="cta" onclick="toggleForm()">Book a call</a>
+        <a href="#" class="cta" onclick="toggleForm(event)">Book a call</a>
         <p>Feel free to explore my portfolio and reach out <br> — I’d love to connect!</p>
       </div>
       
-  
-    <!-- Hidden form -->
-    <form class="call-form" id="callForm">
-      <input type="text" placeholder="Name" required>
-      <input type="text" placeholder="Username" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit">Submit</button>
-    </form>
-  </div>  
-  
+      
+      <!-- Modal Overlay -->
+      <div class="call-form-overlay" id="formOverlay">
+        <form class="call-form" id="callForm">
+          <span class="close-btn" onclick="closeForm()">&times;</span>
+          
+          <div class="name-row">
+            <input type="text" placeholder="Name" required>
+            <input type="text" placeholder="Username" required>
+          </div>
+      
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Comment..." rows="4" required></textarea>
+      
+          <button type="submit">Dergo</button>
+        </form>
+      </div>
+</div>       
+
+
+<section class="core-tech-section">
+  <div class="core-tech-container">
+    <div class="core-tech-wrapper">
+      <!-- Titulli -->
+      <span class="core-tech-title">Core Technologies:</span>
+
+      <!-- Ikonat me scroll -->
+      <div class="core-tech-scroll-container">
+        <div class="core-tech-scroll animate-core-scroll">
+          <!-- Grupi 1 -->
+          <div class="core-tech-icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+          </div>
+
+          <!-- Grupi 2 për scroll të pafund -->
+          <div class="core-tech-icons core-tech-icons-duplicate">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
   
   <div id="experience" class="grid info-grid">
       <div class="card info-card">
@@ -138,5 +203,6 @@
   </footer>
 
   <script src="script.js"></script>
+  
 </body>
 </html>

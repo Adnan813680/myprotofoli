@@ -19,8 +19,11 @@ function toggleDarkMode() {
 function toggleMenu() {
   const nav = document.querySelector('nav ul');
   const menuIcon = document.getElementById('menu-toggle');
+  const closeIcon = document.getElementById('menu-close');
+
   nav.classList.toggle('active');
-  menuIcon.classList.toggle('open'); // Toggle X effect
+  menuIcon.classList.toggle('open');
+  closeIcon.classList.toggle('open');
 }
 
 console.log("Playlist card loaded successfully!");
@@ -53,9 +56,11 @@ stepButtons.forEach(button => {
     }, 300); // 300ms fade
   });
 });
-function toggleForm() {
-    const form = document.getElementById('callForm');
-    form.style.display = form.style.display === 'flex' ? 'none' : 'flex';
+function toggleForm(event) {
+  event.preventDefault();
+  document.getElementById("formOverlay").style.display = "flex";
 }
 
-
+function closeForm() {
+  document.getElementById("formOverlay").style.display = "none";
+}
