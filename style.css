@@ -173,7 +173,7 @@ nav ul li a:hover {
 }
 
 .intro {
-  background-image: url('page_1.png');
+  background-image: url('image/page_1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -386,7 +386,7 @@ nav ul li a:hover {
   
 }
 #experience {
-  background-image: url('page_2.png'); 
+  background-image: url('image/page_2.png'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
