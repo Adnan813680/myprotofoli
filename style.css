@@ -12,18 +12,25 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
+  background: #f5f5f5;
+  color: #000;
   padding: 2rem;
   transition: background 0.3s, color 0.3s;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;        /* Smooth scrolling */
+  scroll-snap-type: y mandatory;  /* Enable vertical snap on scroll */
+}
+
 
 header { 
   padding: 1rem 0rem;
   position: sticky;
   width: 100%;
   z-index: 999;
-  
   
 }
 
@@ -49,7 +56,7 @@ header .container {
   z-index: 1002;
   position: relative;
   right: 20px;
-  top: 15px;
+  top: -15px;
 }
 
 /* Common span styles */
@@ -768,6 +775,7 @@ body.dark-mode .dark-toggle {
 .core-tech-container {
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: -5%;
 }
 
 .core-tech-wrapper {
@@ -813,6 +821,7 @@ body.dark-mode .dark-toggle {
 }
 
 
+/* ========== MOBILE FIXES ========== */
 /* ========== MOBILE FIXES ========== */
 @media (max-width: 768px) {
   body {
@@ -860,6 +869,7 @@ body.dark-mode .dark-toggle {
   .how-i-work {
     padding: 2rem;
     text-align: left;
+  
   }
 
   .how-i-work h2 {
@@ -911,8 +921,13 @@ body.dark-mode .dark-toggle {
     margin-bottom: 30px;
     margin-left: 220px;
   }
+  .section {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 40px; /* ose sa ke nevojë */
+    padding-bottom: 40px;
+    scroll-snap-align: unset;
+    scroll-snap-stop: unset;
+  }
   
 }
-
-
-

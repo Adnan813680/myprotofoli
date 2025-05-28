@@ -1,21 +1,16 @@
-window.onload = function () {
-  const darkModeEnabled = localStorage.getItem('dark-mode') === 'enabled';
-  if (darkModeEnabled) {
-    document.body.classList.add('dark-mode');
-    document.getElementById('icon').textContent = '🌞';
-  }
-};
+// Full Page Scroll with Snap
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    section.style.height = '100vh';
+    section.style.scrollSnapAlign = 'start';
+  });
 
-function toggleDarkMode() {
-  const body = document.body;
-  const icon = document.getElementById('icon');
+  document.body.style.scrollSnapType = 'y mandatory';
+  document.body.style.overflowY = 'scroll';
+  document.body.style.overflowX = 'hidden';
+});
 
-  body.classList.toggle('dark-mode');
-  const isDark = body.classList.contains('dark-mode');
-
-  icon.textContent = isDark ? '🌞' : '🌙';
-  localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
-}
 function toggleMenu() {
   const nav = document.querySelector('nav ul');
   const menuIcon = document.getElementById('menu-toggle');
@@ -26,41 +21,45 @@ function toggleMenu() {
   closeIcon.classList.toggle('open');
 }
 
-console.log("Playlist card loaded successfully!");
-const stepButtons = document.querySelectorAll('.step-btn');
-const stepText = document.getElementById('step-text');
+// Toggle Form Modal
+function toggleForm(event) {
+  event.preventDefault();
+  document.getElementById('formOverlay').style.display = 'flex';
+}
 
-const stepDescriptions = {
+function closeForm() {
+  document.getElementById('formOverlay').style.display = 'none';
+}
+
+// Dark Mode Toggle
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+
+  const icon = document.getElementById("icon");
+  if (document.body.classList.contains("dark-mode")) {
+    icon.textContent = "🌞";
+  } else {
+    icon.textContent = "🌙";
+  }
+}
+
+// "How I Work" Stepper
+const stepText = document.getElementById('step-text');
+const stepButtons = document.querySelectorAll('.step-btn');
+
+const steps = {
   1: "Understanding the client’s needs and goals thoroughly.",
-  2: "Designing a user-centric and innovative solution.",
-  3: "Developing prototypes and iterating with feedback.",
-  4: "Delivering a polished, high-quality final product.",
+  2: "Planning and designing based on best UX/UI practices.",
+  3: "Implementing and coding the project efficiently.",
+  4: "Testing, iterating, and delivering with quality assurance."
 };
 
 stepButtons.forEach(button => {
   button.addEventListener('click', () => {
-    // Remove active class from all
+    const step = button.dataset.step;
+    stepText.textContent = steps[step];
+
     stepButtons.forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
-
-    // Fade out
-    stepText.style.opacity = 0;
-    
-    // Change text after fade out
-    setTimeout(() => {
-      const stepNumber = button.getAttribute('data-step');
-      stepText.textContent = stepDescriptions[stepNumber];
-      
-      // Fade in
-      stepText.style.opacity = 1;
-    }, 300); // 300ms fade
   });
 });
-function toggleForm(event) {
-  event.preventDefault();
-  document.getElementById("formOverlay").style.display = "flex";
-}
-
-function closeForm() {
-  document.getElementById("formOverlay").style.display = "none";
-}
