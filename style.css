@@ -3,7 +3,6 @@
   
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +15,7 @@ body {
   color: #000;
   padding: 2rem;
   transition: background 0.3s, color 0.3s;
+  
 }
 
 html, body {
@@ -25,6 +25,10 @@ html, body {
   scroll-snap-type: y mandatory;  /* Enable vertical snap on scroll */
 }
 
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
 
 header { 
   padding: 1rem 0rem;
@@ -56,7 +60,6 @@ header .container {
   z-index: 1002;
   position: relative;
   right: 20px;
-  top: -15px;
 }
 
 /* Common span styles */
@@ -70,18 +73,18 @@ header .container {
 }
 
 .menu-icon.open {
-  display: none; /* fsheh hamburger-in sapo ka klasën .open */ 
+  display: none;  
 }
 .close-icon {
   font-size: 1.8rem;
   color: #000;
   cursor: pointer;
-  display: none;              /* fshehur si parazgjedhje */ 
+  display: none;              
   user-select: none;
   margin-left: 10px;
 }
 .close-icon.open {
-  display: block;             /* shfaqet kur ka klasën .open */ 
+  display: block;            
 }
 
 /* Specific span widths */
@@ -179,19 +182,23 @@ nav ul li a:hover {
   }
 }
 
+
 .intro {
+  border-radius: 12px;
+  min-width: 80%;
   background-image: url('image/page_1.png');
-  background-size: cover;
+  background-size: 100% 100%; 
+  overflow: hidden; 
   background-position: center;
   background-repeat: no-repeat;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  border-radius: 12px;
 }
 
-/* Optional: Add a dark overlay to improve readability */
+
 .intro::before {
   content: "";
   position: absolute;
@@ -235,16 +242,47 @@ nav ul li a:hover {
   
 }
 .badge {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem; 
+  font-weight: 600;
+  color: white;
+  background-color: #ff6600;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  max-width: 100%;
+  box-sizing: border-box;
   margin-bottom: -8%;
   margin-left: -10%;
-  display: inline-block;
-  background: #fff;
-  color: #0a8451;
-  padding: 0.7rem 0.9rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  
+  text-decoration: none;
+
 }
+
+
+.badge:hover {
+  background-color: #ff0000;
+  transform: scale(1.05);
+}
+
+/* Responsive font-size */
+@media (max-width: 768px) {
+  .badge {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .badge {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    width: 100%;  /* makes it full-width on small screens */
+  }
+}
+
 .callout {
   display: flex;
   align-items: center;
@@ -301,7 +339,7 @@ nav ul li a:hover {
   background-color: #0056b3;
 }
 .logo img {
-  margin-top: 10px;
+  margin-top: 25px;
   width: 50px;
   height: 50px;
   border-radius: 24px;
@@ -392,17 +430,19 @@ nav ul li a:hover {
   margin: 0 auto;
   
 }
-#experience {
+.b{
   background-image: url('image/page_2.png'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 60vh;
+  border-radius: 12px;
+}
+#experience {
   padding: 60px 20px;
   color: white;
   z-index: 1;
   position: relative;
-  min-height: 60vh;
-  border-radius: 12px;
 }
 .section-heading {
   font-size: 15px;
@@ -822,7 +862,6 @@ body.dark-mode .dark-toggle {
 
 
 /* ========== MOBILE FIXES ========== */
-/* ========== MOBILE FIXES ========== */
 @media (max-width: 768px) {
   body {
     padding: 1rem;
@@ -831,19 +870,20 @@ body.dark-mode .dark-toggle {
   header .container {
     flex-direction: row;
     align-items: flex-start;
+    margin-top: -55px;
   }
 
   .menu-icon {
     font-size: 1.5rem;
     padding: 8px 16px;
-    top: 10px;
     right: 10px;
   }
 
   nav ul {
-    width: 100%;
+    width: 50%;
     padding: 1.5rem;
     box-shadow: none;
+    position: fixed;
   }
 
   .intro h1, .intro h2 {
@@ -929,5 +969,7 @@ body.dark-mode .dark-toggle {
     scroll-snap-align: unset;
     scroll-snap-stop: unset;
   }
+
   
 }
+

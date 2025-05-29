@@ -1,16 +1,3 @@
-// Full Page Scroll with Snap
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('.section');
-  sections.forEach(section => {
-    section.style.height = '100vh';
-    section.style.scrollSnapAlign = 'start';
-  });
-
-  document.body.style.scrollSnapType = 'y mandatory';
-  document.body.style.overflowY = 'scroll';
-  document.body.style.overflowX = 'hidden';
-});
-
 function toggleMenu() {
   const nav = document.querySelector('nav ul');
   const menuIcon = document.getElementById('menu-toggle');
@@ -54,12 +41,5 @@ const steps = {
   4: "Testing, iterating, and delivering with quality assurance."
 };
 
-stepButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const step = button.dataset.step;
-    stepText.textContent = steps[step];
 
-    stepButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-  });
-});
+
