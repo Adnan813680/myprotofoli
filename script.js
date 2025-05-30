@@ -41,5 +41,14 @@ const steps = {
   4: "Testing, iterating, and delivering with quality assurance."
 };
 
+stepButtons.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    const step = index + 1;
+    stepText.textContent = steps[step];
 
+    // Optional: Add active class styling
+    stepButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
 
