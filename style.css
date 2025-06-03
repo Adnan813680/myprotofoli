@@ -814,9 +814,7 @@ body.dark-mode .dark-toggle {
 
 
 .core-tech-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: -5%;
+  margin-top: -10%;
 }
 
 .core-tech-wrapper {
