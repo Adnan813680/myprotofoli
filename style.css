@@ -247,7 +247,7 @@ nav ul li a:hover {
   font-size: 1rem; 
   font-weight: 600;
   color: white;
-  background-color: #FFB8A9;
+  background-color: #fff;
   border-radius: 25px;
   cursor: pointer;
   text-align: center;
@@ -255,8 +255,8 @@ nav ul li a:hover {
   user-select: none;
   max-width: 100%;
   box-sizing: border-box;
-  margin-bottom: -8%;
-  margin-left: -10%;
+  margin-bottom: -6%;
+  margin-left: -6%;
   text-decoration: none;
 
 }
