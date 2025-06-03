@@ -1,5 +1,5 @@
 :root {
-  --accent: #ff6600;
+  --accent: #9260a0;
   
 }
 
@@ -229,7 +229,6 @@ nav ul li a:hover {
 }
 
 .intro h2 {
-  color: #555;
   font-weight: 600;
 }
 
