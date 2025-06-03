@@ -242,7 +242,6 @@ nav ul li a:hover {
   
 }
 .badge {
-  
   padding: 12px 12px;
   font-size: 1rem; 
   font-weight: 600;
@@ -305,8 +304,8 @@ nav ul li a:hover {
 
 
 .callout .cta {
-  background-color: #000;
-  color: white;
+  background-color: #FFB8BE;
+  color: #fff;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
@@ -328,7 +327,8 @@ nav ul li a:hover {
 }
 
 .cta:hover {
-  background: #ff0000;
+  background-color: #fff;
+  color: #FFB8BE;
 }
 
   
