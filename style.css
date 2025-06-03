@@ -926,7 +926,6 @@ body.dark-mode .dark-toggle {
 
   .card, .playlist-card, .reading-card, .experience-card, .service-card {
     width: 90%;
-    height: auto;
     padding: 1.5rem;
   }
 
@@ -987,8 +986,7 @@ body.dark-mode .dark-toggle {
   }
   .section {
     height: auto;
-    min-height: 100vh;
-    padding-top: 40px; /* ose sa ke nevojë */
+    padding-top: 40px; 
     padding-bottom: 40px;
     scroll-snap-align: unset;
     scroll-snap-stop: unset;
