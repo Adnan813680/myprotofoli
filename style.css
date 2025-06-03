@@ -242,7 +242,7 @@ nav ul li a:hover {
   
 }
 .badge {
-  display: inline-block;
+  
   padding: 12px 12px;
   font-size: 1rem; 
   font-weight: 600;
@@ -258,13 +258,14 @@ nav ul li a:hover {
   margin-bottom: -6%;
   margin-left: -8%;
   text-decoration: none;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
-.badge:hover {
-  background-color: #ff0000;
-  transform: scale(1.05);
-}
 .fil0 {
   fill: #FFB8BE;
 }
@@ -274,6 +275,7 @@ nav ul li a:hover {
   border: 0 !important;
   border-radius: 50% !important;
   background-color: #FFB8BE !important;
+  margin-bottom: 0 !important;
 
 }
 
