@@ -247,8 +247,8 @@ nav ul li a:hover {
   font-size: 1rem; 
   font-weight: 600;
   color: white;
-  background-color: #fff;
-  border-radius: 25px;
+  background-color: #FFB8BE;
+  border-radius: 50%;
   cursor: pointer;
   text-align: center;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -260,7 +260,6 @@ nav ul li a:hover {
   text-decoration: none;
 
 }
-
 
 .badge:hover {
   background-color: #ff0000;
