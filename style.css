@@ -455,6 +455,7 @@ nav ul li a:hover {
   color: white;
   z-index: 1;
   position: relative;
+  
 }
 .section-heading {
   font-size: 15px;
@@ -524,6 +525,8 @@ h3{
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
+  height: 100%;
+  align-items: center;
   
 }
 
