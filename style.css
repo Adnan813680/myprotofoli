@@ -256,7 +256,7 @@ nav ul li a:hover {
   max-width: 100%;
   box-sizing: border-box;
   margin-bottom: -6%;
-  margin-left: -6%;
+  margin-left: -8%;
   text-decoration: none;
 
 }
@@ -265,6 +265,16 @@ nav ul li a:hover {
 .badge:hover {
   background-color: #ff0000;
   transform: scale(1.05);
+}
+.fil0 {
+  fill: #FFB8BE;
+}
+.cv-clas{
+  width: 35px;
+  height: 35px;
+  border: 0;
+  border-radius: 50%;
+
 }
 
 /* Responsive font-size */
