@@ -648,6 +648,13 @@ iframe {
   text-align: center;
   
 }
+#work{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
 
 .how-i-work h2 {
   font-size: 2rem;
