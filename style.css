@@ -726,6 +726,7 @@ iframe {
 
 .service-card{
   width: 470px;
+  height: 66vh;
 }
 
 .card:hover, .service-card:hover, .info-card:hover {
